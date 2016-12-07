@@ -22,8 +22,6 @@
 # Thrift Service that the MetaStore is built on
 #
 
-include "fb303.thrift"
-
 namespace java org.apache.hadoop.hive.metastore.api
 namespace php metastore
 namespace cpp Apache.Hadoop.Hive
@@ -249,7 +247,7 @@ exception ConfigValSecurityException {
 /**
 * This interface is live.
 */
-service ThriftHiveMetastore extends fb303.FacebookService
+service ThriftHiveMetastore
 {
   void create_database(1:Database database) throws(1:AlreadyExistsException o1, 2:InvalidObjectException o2, 3:MetaException o3)
   Database get_database(1:string name) throws(1:NoSuchObjectException o1, 2:MetaException o2)
